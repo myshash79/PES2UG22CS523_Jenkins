@@ -10,3 +10,4 @@ int main(void) {
 }
 std::cout << "Webhook Triggered!";
 std::cout << "New Webhook Test!";
+std::cout << "CI/CD Webhook Test Successful!";
