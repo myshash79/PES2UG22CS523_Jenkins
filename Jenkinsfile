@@ -16,7 +16,7 @@ pipeline {
             steps {
                 sh '''
                     cd main
-                    ./invalid_exec  # This file does not exist, so it will fail
+                    ./hello_exec  # Restore correct command
                 '''
             }
         }
