@@ -5,8 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                    cd main  # Move to the correct directory
-                    ls -l  # Verify hello.cpp exists
+                    cd main
+                    ls -l
                     g++ hello.cpp -o hello_exec
                 '''
             }
@@ -15,8 +15,8 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''
-                    cd main  # Move to the correct directory
-                    ./hello_exec
+                    cd main
+                    ./invalid_exec  # This file does not exist, so it will fail
                 '''
             }
         }
