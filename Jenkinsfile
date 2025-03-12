@@ -4,13 +4,20 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'g++ hello.cpp -o hello_exec'
+                sh '''
+                    cd main  # Move to the correct directory
+                    ls -l  # Verify hello.cpp exists
+                    g++ hello.cpp -o hello_exec
+                '''
             }
         }
         
         stage('Test') {
             steps {
-                sh './hello_exec'
+                sh '''
+                    cd main  # Move to the correct directory
+                    ./hello_exec
+                '''
             }
         }
         
